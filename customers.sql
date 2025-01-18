@@ -27,8 +27,16 @@ VALUES (6, "Futterkiste", "Anders", "Obere Str", "Berlin", "12209", "Germany"),
 INSERT INTO customers (CustomerID, CustomerName, ContactName, Address, City, PostalCode, Country)
 VALUES (11, "Futterkiste", "Anders", "Obere Str", "Berlin", "12209", "Germany");
 
+CREATE TABLE orders (
+	OrderID INT NOT NULL PRIMARY KEY,
+    CustomerID INT,
+    OrderDate DATE
+);
 
-
+INSERT INTO orders (OrderID, CustomerID, OrderDate)
+VALUES (10308, 2, "1996-09-18"),
+	   (10309, 37, "1996-09-19"),
+       (10310, 77, "1996-09-20");
        
 
 
