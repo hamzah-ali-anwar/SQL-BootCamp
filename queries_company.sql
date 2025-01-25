@@ -34,24 +34,40 @@ UNION
 
 SELECT *
 FROM Employees 
-RIGHT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID
+RIGHT JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
 
 -- Write a SQL query to fetch employee names and their departments.
 
-
-
+SELECT FirstName, LastName, DepartmentName
+FROM Employees
+INNER JOIN Departments
+ON Employees.DepartmentID = Departments.DepartmentID;
 
 -- Write a SQL query to fetch the top 3 highest-paid employees.
 
+SELECT *
+FROM Employees
+ORDER BY Salary DESC
+LIMIT 3;
 
 -- Write a SQL query to find the 2nd largest salary of an employee
 
+SELECT Salary as SecondLargest
+FROM Employees
+ORDER BY Salary DESC
+LIMIT 1 OFFSET 1;
 
 -- Write a SQL query to fetch employees whose names start with the letter "A".
 
-
+SELECT CONCAT(FirstName, ' ', LastName) as Name
+FROM Employees
+WHERE FirstName LIKE 'A%';
 
 -- Write a SQL query to fetch employees who were hired in the year 2022.
+
+SELECT *
+FROM EMPLOYEES
+WHERE YEAR(HiringDate) = 2022;
 
 
 -- Write a SQL query to count the total number of employees in each department.

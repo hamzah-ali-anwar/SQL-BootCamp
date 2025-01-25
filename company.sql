@@ -58,3 +58,4 @@ INSERT INTO Employees (FirstName, LastName, Email, Salary, DepartmentID, Manager
 ('Kelly', 'Kapoor', 'kelly.kapoor@company.com', 43000, 4, NULL, '2012-07-19'),
 ('Ryan', 'Howard', 'ryan.howard@company.com', 39000, 4, NULL, '2013-09-05'),
 ('Toby', 'Flenderson', 'toby.flenderson@company.com', 59000, 1, NULL, '2009-04-10');
+
