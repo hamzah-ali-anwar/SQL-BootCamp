@@ -69,8 +69,9 @@ SELECT *
 FROM EMPLOYEES
 WHERE YEAR(HiringDate) = 2022;
 
-
 -- Write a SQL query to count the total number of employees in each department.
+
+
 
 
 -- Write a SQL query to find the average salary of employees in the "Finance" department.
