@@ -34,6 +34,48 @@ FROM Employees
 ORDER BY Salary DESC
 LIMIT 3;
 
+SELECT MIN(Salary)
+FROM Employees;
 
+SELECT MAX(Salary)
+FROM Employees;
+
+SELECT MIN(Salary) AS LowestSalary
+From Employees;
+
+SELECT MAX(Salary) AS HighestSalary
+From Employees;
+
+SELECT SUM(Salary) as Total
+FROM Employees
+WHERE DepartmentID = 1;
+
+SELECT DISTINCT DepartmentID
+FROM Employees;
+
+SELECT AVG(Salary) AS Avg_Salary
+FROM Employees;
+
+SELECT *
+FROM Employees
+WHERE Salary > (SELECT AVG(Salary) FROM Employees);
+
+SELECT *
+FROM Employees
+WHERE DepartmentID IN (1, 2, 3)
+ORDER BY DepartmentID ASC;
+
+SELECT *
+FROM Employees
+WHERE Salary BETWEEN 50000.00 AND 60000.00;
+
+-- INNER JOIN
+SELECT Employees.FirstName, Employees.LastName, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
+
+SELECT CONCAT(Employees.FirstName, ' ', Employees.LastName) AS Name, Departments.DepartmentID, Departments.DepartmentName
+FROM Employees
+INNER JOIN Departments ON Employees.EmployeeID = Departments.DepartmentID;
 
 
