@@ -69,6 +69,24 @@ SELECT *
 FROM Employees
 WHERE Salary BETWEEN 50000.00 AND 60000.00;
 
+-- CustomerID, CompanyName, ContactName, Country
+SELECT *
+FROM Customers;
+
+-- EmployeeID, FirstName, LastName, Title, ReportsTo, HireDate
+SELECT * 
+FROM Employees;
+
+-- OrderID, CustomerID, EmployeeID, OrderDate, ShipCountry
+SELECT *
+FROM Orders;
+
+-- ProductID, ProductName, SupplierID, CategoryID, UnitPrice, UnitsInStock
+SELECT *
+FROM Products;
+
+-- JOINS
+
 -- INNER JOIN
 SELECT Employees.FirstName, Employees.LastName, Departments.DepartmentName
 FROM Employees
@@ -77,5 +95,44 @@ INNER JOIN Departments ON Employees.DepartmentID = Departments.DepartmentID;
 SELECT CONCAT(Employees.FirstName, ' ', Employees.LastName) AS Name, Departments.DepartmentID, Departments.DepartmentName
 FROM Employees
 INNER JOIN Departments ON Employees.EmployeeID = Departments.DepartmentID;
+
+/** 
+Challenge 1: Customers and Orders
+    
+Retrieve a list of all customers who have placed an order.
+Display the CustomerName, OrderID, and OrderDate.
+Use the Customers and Orders tables.
+*/
+
+SELECT Customers.ContactName, Orders.OrderID, Orders.OrderDate
+FROM Customers
+INNER JOIN Orders
+ON Customers.CustomerID = Orders.CustomerID;
+
+/**
+Challenge 2: Employees and Orders
+
+Retrieve a list of employees and the orders they processed.
+Display the LastName, FirstName, OrderID, and OrderDate.
+Use the Employees and Orders tables.
+*/
+
+SELECT Employees.FirstName, Employees.LastName, Orders.OrderID, Orders.OrderDate
+FROM Employees
+INNER JOIN Orders
+ON Employees.EmployeeID = Orders.EmployeeID;
+
+/**
+Challenge 3: Orders and Products
+
+Retrieve a list of products for each order.
+Display the OrderID, ProductName, Quantity, and PriceEach.
+Use the Orders, OrderDetails, and Products tables.
+*/
+
+SELECT Orders.OrderID, Products.ProductName
+
+
+;
 
 
