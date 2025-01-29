@@ -123,16 +123,25 @@ INNER JOIN Orders
 ON Employees.EmployeeID = Orders.EmployeeID;
 
 /**
-Challenge 3: Orders and Products
+Challenge 3: Customers, Employees, and Orders
 
-Retrieve a list of products for each order.
-Display the OrderID, ProductName, Quantity, and PriceEach.
-Use the Orders, OrderDetails, and Products tables.
+Retrieve a list of orders, along with the employee who processed the order and the customer who placed it.
+Display the OrderID, OrderDate, CompanyName (customer), ContactName (customer), FirstName (employee), and LastName (employee).
+Use the Orders, Customers, and Employees tables with INNER JOIN.
 */
 
-SELECT Orders.OrderID, Products.ProductName
+SELECT  
+	Orders.OrderID, 
+	Orders.OrderDate, 
+	Customers.CompanyName, 
+	Customers.ContactName, 
+	Employees.FirstName, 
+	Employees.LastName
+FROM Orders
+INNER JOIN Customers ON Orders.CustomerID = Customers.CustomerID
+INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID;
 
 
-;
+
 
 
