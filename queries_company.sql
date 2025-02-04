@@ -71,8 +71,10 @@ WHERE YEAR(HiringDate) = 2022;
 
 -- Write a SQL query to count the total number of employees in each department.
 
-
-
+SELECT DISTINCT COUNT(*), DepartmentName
+FROM Employees
+INNER JOIN Departments
+ON Employees.DepartmentID = Departments.DepartmentID;
 
 -- Write a SQL query to find the average salary of employees in the "Finance" department.
 
